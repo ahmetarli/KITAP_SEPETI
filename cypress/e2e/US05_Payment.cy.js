@@ -21,6 +21,7 @@ describe("Kitapsepeti Ödeme İşlemleri", () => {
                         cy.wait(3000);
                         cy.get('.product-title').contains(expected.Product).should('be.visible').click();
                         AddToCart.addUrun();
+                        AddToCart.blockAds();
                         AddToCart.visit(); // tekrar anasayfaya dönüş
             AddToCart.buttonForCart();
             AddToCart.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..
