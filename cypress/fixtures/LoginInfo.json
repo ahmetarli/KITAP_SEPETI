@@ -1,0 +1,15 @@
+{
+  "validUser": {
+    "email": "betester12344@gmail.com",
+    "password": "Testsifre123+-"
+  },
+  "invalidUser": {
+    "email": "betester12344@gmail.com",
+    "password": "yanlisSifre123"
+  },
+
+  "invalidUser2": {
+    "email": "betester12344.gmail.com",
+    "password": "yanlisSifre123"
+  }
+}
