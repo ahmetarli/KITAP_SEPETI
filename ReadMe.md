@@ -102,7 +102,7 @@ module.exports = defineConfig({
 
 ---
 
- 
+**📸Cypress Run Report Screenshot**
 ![Cypress Run Report](cypress/screenshots/cypressReport.png) 
 
 
