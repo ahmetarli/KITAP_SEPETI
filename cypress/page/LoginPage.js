@@ -21,6 +21,12 @@ class LoginPage {
     submitLogin() {
         cy.get('#login-btn-322').should("be.visible").click();  
     }
+    forgetPassw(){
+        cy.contains('a', 'Şifremi Unuttum').should('be.visible').click().then(() => {
+                      cy.url().should('eq', 'https://www.kitapsepeti.com/uye-sifre-hatirlat');
+                      cy.contains('Şifremi Hatırlat').should('be.visible');
+               });
+    }
 
 
 }

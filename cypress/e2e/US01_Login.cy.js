@@ -90,11 +90,9 @@ describe("Kitapsepeti Login Testleri", () => {
         cy.fixture("LoginInfo").then((expected) => {
             LoginPage.visit();
             LoginPage.openLoginPopup();
+            LoginPage.forgetPassw();
 
-            cy.contains('a', 'Şifremi Unuttum').should('be.visible').click().then(() => {
-                      cy.url().should('eq', 'https://www.kitapsepeti.com/uye-sifre-hatirlat');
-                      cy.contains('Şifremi Hatırlat').should('be.visible');
-               });
+            
 
         });
     });
