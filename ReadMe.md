@@ -106,4 +106,14 @@ module.exports = defineConfig({
 ![Cypress Run Report](cypress/screenshots/cypressReport.png) 
 
 
+---
+
+
+**📚 Proje Dokümantasyonları**
+
+📄 [Test Cases](https://docs.google.com/spreadsheets/d/1pnHqBMybE7YNjfT18sOoe9O6OF0vTT-qjGVgqAJzSgY/edit?usp=sharing) — User Story kabul kriterleri temel alınarak hazırlanmış test senaryoları.
+
+📄 [Test Acceptance Criterias](https://docs.google.com/spreadsheets/d/1yI188XeFEMgtu2LrL9QDRiNO8rF1pnPFFAomGV-uI-0/edit?gid=1345439340#gid=1345439340) — Test kabul kriterlerini içeren doküman.
+
+
 
