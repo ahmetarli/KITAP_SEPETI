@@ -1,11 +1,11 @@
-**#🔵 Cypress E2E Test Projesi**
+**🔵 Cypress E2E Test Projesi**
 
 Bu proje, bir e-ticaret sitesinin temel kullanıcı senaryolarını **Cypress ile otomatik olarak test etmek** amacıyla hazırlanmıştır.  
 Login, ürün arama, ürün detayına giriş, sepete ekleme ve ödeme işlemleri gibi test senaryolarını kapsamaktadır.
 
 ---
 
-**## 📝 Proje Özeti**
+**📝 Proje Özeti**
 
 - Login testi (pozitif/negatif case)  
 - Ürün arama ve filtreleme  
@@ -17,7 +17,7 @@ Login, ürün arama, ürün detayına giriş, sepete ekleme ve ödeme işlemleri
 
 ---
 
-**## 📂 Dosya Yapısı**
+**📂 Dosya Yapısı**
 
 ```
 KITAP_SEPETI
@@ -37,7 +37,7 @@ KITAP_SEPETI
 ---
 
 
-**## 📂 Kurulum ve Çalıştırma**
+**📂 Kurulum ve Çalıştırma**
 
 ```bash
 # Projeyi klonla
@@ -73,7 +73,7 @@ xdg-open cypress/reports/html/report.html
 
 ---
 
-## 🔵 Config ayarları ve Mocha kurulumu için gerekli şartlar
+🔵 Config ayarları ve Mocha kurulumu için gerekli şartlar
 
 const { defineConfig } = require("cypress");
 
