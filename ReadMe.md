@@ -1,54 +1,83 @@
 # Cypress E2E Test Projesi
 
 Bu proje, bir e-ticaret sitesinin temel kullanıcı senaryolarını **Cypress ile otomatik olarak test etmek** amacıyla hazırlanmıştır.  
-Login, ürün arama, ürün detayına giriş,sepete ekleme ve ödeme işlemleri gibi test senaryolarını kapsamaktadır.
+Login, ürün arama, ürün detayına giriş, sepete ekleme ve ödeme işlemleri gibi test senaryolarını kapsamaktadır.
 
 ---
 
 ## 📝 Proje Özeti
 
-- Login testi 
+- Login testi (pozitif/negatif case)  
 - Ürün arama ve filtreleme  
 - Ürün detayına giriş  
 - Sepete yönetimi ve kontrolü  
-- Ödeme ve Sipariş Onayı
-- Misafir olarak satın alma işlemleri 
+- Ödeme ve Sipariş Onayı  
+- Misafir olarak satın alma işlemleri  
 - Testler POM (Page Object Model) yapısına uygun olarak yazılmıştır  
+
+---
 
 ---
 
 ## 📂 Dosya Yapısı
 KITAP_SEPETI
-/cypress
-    /e2e                -> Test senaryoları
-    /fixtures           -> Test verileri
-    /support            -> Custom commands ve setup
-/allure-results         -> Allure raporları (otomatik oluşturulur)
-/node_modules
-cypress/screenshots/    -> Screenshotlar
-cypress/videos/         -> Test videoları
-cypress.config.js       -> Cypress yapılandırma dosyası
-package.json            -> Proje bağımlılıkları
-README.md               -> Proje açıklaması
+│
+├─ /cypress
+│ ├─ /e2e -> Test senaryoları
+│ ├─ /fixtures -> Test verileri
+│ └─ /support -> Custom commands ve setup
+│
+├─ /cypress/screenshots/ -> Test screenshotları
+├─ /cypress/videos/ -> Test videoları
+├─ /cypress/reports/html -> HTML raporlar(Mochawesome)
+├─ /node_modules -> Node paketleri
+├─ cypress.config.js -> Cypress yapılandırma dosyası
+├─ package.json -> Proje bağımlılıkları
+└─ README.md -> Proje açıklaması
 
 ---
 
 ## 📂 Kurulum ve Çalıştırma
-git clone https://github.com/kullanici/KITAP_SEPETI.git                         -> Projeyi klonlar
-cd KITAP_SEPETI                                                                 -> Proje klasörüne girer
-npm install                                                                     -> Projenin çalışması için gerekli tüm kütüphaneleri ve paketleri yükler
-npx cypress open                                                                -> Cypress GUI ile testleri çalıştırır
-npx cypress run                                                                 -> CLI ile testleri çalıştırır
-npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json      -> JSON dosyalarını birleştirir
-npx marge cypress/reports/report.json -f report -o cypress/reports/html         -> HTML raporunu oluşturur
-start cypress/reports/html/report.html                                          -> Windows'ta HTML raporu açar
-open cypress/reports/html/report.html                                           -> Mac'te HTML raporu açar
-xdg-open cypress/reports/html/report.html                                       -> Linux'ta HTML raporu açar
+
+---
+
+## 📂 Kurulum ve Çalıştırma
+
+```bash
+# Projeyi klonla
+git clone https://github.com/kullanici/KITAP_SEPETI.git
+
+# Proje klasörüne gir
+cd KITAP_SEPETI
+
+# Gerekli tüm kütüphaneleri yükle
+npm install
+
+# Cypress GUI ile testleri çalıştır
+npx cypress open
+
+# CLI ile tüm testleri çalıştır
+npx cypress run
+
+# JSON dosyalarını birleştir
+npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+
+# HTML raporunu oluştur
+npx marge cypress/reports/report.json -f report -o cypress/reports/html
+
+# HTML raporu aç (Windows)
+start cypress/reports/html/report.html
+
+# HTML raporu aç (Mac)
+open cypress/reports/html/report.html
+
+# HTML raporu aç (Linux)
+xdg-open cypress/reports/html/report.html
+
 
 ---
 
 ## 📂 Config ayarları ve Mocha kurulumu için gerekli şartlar
-// cypress.config.js
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
@@ -57,8 +86,8 @@ module.exports = defineConfig({
   reporterOptions: {
     reportDir: "cypress/reports", // HTML raporların kaydedileceği klasör
     overwrite: true,               // Önceki raporların üzerine yaz
-    html: true,                    // HTML rapor oluştur                ---> eğer html yaparsak testlerimizi tek tek çalıştırmamız lazım spec olarak
-    json: false                     // JSON raporu istemiyorsan false   ---> json formatında çoklu çıktı alabiliriz 
+    html: true,                    // HTML rapor oluştur (tek tek çalıştırma gerekir)
+    json: false                     // JSON raporu istemiyorsan false
   },
 
   // E2E Test Ayarları
@@ -70,3 +99,4 @@ module.exports = defineConfig({
     supportFile: "cypress/support/e2e.js",    // Support dosyası
   },
 });
+
