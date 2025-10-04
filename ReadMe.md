@@ -1,11 +1,11 @@
-# Cypress E2E Test Projesi
+**#🔵 Cypress E2E Test Projesi**
 
 Bu proje, bir e-ticaret sitesinin temel kullanıcı senaryolarını **Cypress ile otomatik olarak test etmek** amacıyla hazırlanmıştır.  
 Login, ürün arama, ürün detayına giriş, sepete ekleme ve ödeme işlemleri gibi test senaryolarını kapsamaktadır.
 
 ---
 
-## 📝 Proje Özeti
+**## 📝 Proje Özeti**
 
 - Login testi (pozitif/negatif case)  
 - Ürün arama ve filtreleme  
@@ -17,31 +17,27 @@ Login, ürün arama, ürün detayına giriş, sepete ekleme ve ödeme işlemleri
 
 ---
 
----
+**## 📂 Dosya Yapısı**
 
-## 📂 Dosya Yapısı
+```
 KITAP_SEPETI
-│
 ├─ /cypress
-│ ├─ /e2e -> Test senaryoları
-│ ├─ /fixtures -> Test verileri
-│ └─ /support -> Custom commands ve setup
-│
+│  ├─ /e2e            -> Test senaryoları
+│  ├─ /fixtures       -> Test verileri
+│  └─ /support        -> Custom commands ve setup
 ├─ /cypress/screenshots/ -> Test screenshotları
-├─ /cypress/videos/ -> Test videoları
-├─ /cypress/reports/html -> HTML raporlar(Mochawesome)
-├─ /node_modules -> Node paketleri
-├─ cypress.config.js -> Cypress yapılandırma dosyası
-├─ package.json -> Proje bağımlılıkları
-└─ README.md -> Proje açıklaması
+├─ /cypress/videos/      -> Test videoları
+├─ /cypress/reports/html -> HTML raporlar (Mochawesome)
+├─ /node_modules         -> Node paketleri
+├─ cypress.config.js     -> Cypress yapılandırma dosyası
+├─ package.json          -> Proje bağımlılıkları
+└─ README.md             -> Proje açıklaması
+```
 
 ---
 
-## 📂 Kurulum ve Çalıştırma
 
----
-
-## 📂 Kurulum ve Çalıştırma
+**## 📂 Kurulum ve Çalıştırma**
 
 ```bash
 # Projeyi klonla
@@ -77,7 +73,7 @@ xdg-open cypress/reports/html/report.html
 
 ---
 
-## 📂 Config ayarları ve Mocha kurulumu için gerekli şartlar
+**## 📂 Config ayarları ve Mocha kurulumu için gerekli şartlar**
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
