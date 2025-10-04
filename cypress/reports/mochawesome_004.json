@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-04T18:12:47.183Z",
+    "end": "2025-10-04T18:14:14.874Z",
+    "duration": 87691,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e7919c9c-c39a-4f18-97b3-0601aaac4f06",
+      "title": "",
+      "fullFile": "cypress\\e2e\\US04_CartSystem.cy.js",
+      "file": "cypress\\e2e\\US04_CartSystem.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "79106f4d-96e0-45db-88e0-c35aae6e2567",
+          "title": "Kitapsepeti Sepet Sistemi",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC22_Sepete Erişim",
+              "fullTitle": "Kitapsepeti Sepet Sistemi TC22_Sepete Erişim",
+              "timedOut": null,
+              "duration": 26374,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  cy.wait(3000);\n  _AddToCart.default.blockAds();\n  // Bu kısım öncesinden ürün eklememiz ve sonrasında kontrol etmemiz için \n  _ProductDetails.default.SearchBox(expected.Product);\n  _ProductDetails.default.SearchButton();\n  _AddToCart.default.blockAds();\n  cy.wait(3000);\n  cy.get('.product-title').contains(expected.Product).should('be.visible').click();\n  _AddToCart.default.addUrun();\n  _AddToCart.default.visit(); // tekrar anasayfaya dönüş\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n});",
+              "err": {},
+              "uuid": "25c2521c-573e-455a-8fc9-978e7d352924",
+              "parentUUID": "79106f4d-96e0-45db-88e0-c35aae6e2567",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC23_Sepet değer kontrolleri",
+              "fullTitle": "Kitapsepeti Sepet Sistemi TC23_Sepet değer kontrolleri",
+              "timedOut": null,
+              "duration": 7843,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.urunInfo(_CartDetails.default.product);\n  _AddToCart.default.urunInfo();\n  _AddToCart.default.sepetToplami();\n});",
+              "err": {},
+              "uuid": "c4976a67-817d-4804-9d02-c39815ce1dd9",
+              "parentUUID": "79106f4d-96e0-45db-88e0-c35aae6e2567",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC24_Sepet içinde ürün adeti arttırma",
+              "fullTitle": "Kitapsepeti Sepet Sistemi TC24_Sepet içinde ürün adeti arttırma",
+              "timedOut": null,
+              "duration": 6598,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.adetArttir();\n});",
+              "err": {},
+              "uuid": "9d1be754-b543-4a05-8a2e-501af45f9f67",
+              "parentUUID": "79106f4d-96e0-45db-88e0-c35aae6e2567",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC25_Sepet paneli içinde tüm sepeti temizleme ve kontrol ",
+              "fullTitle": "Kitapsepeti Sepet Sistemi TC25_Sepet paneli içinde tüm sepeti temizleme ve kontrol ",
+              "timedOut": null,
+              "duration": 8204,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.deleteAllProduct();\n  cy.contains('Alışverişe Devam Et').should('be.visible');\n});",
+              "err": {},
+              "uuid": "0ae8ae54-99ec-4388-800c-855b260bd1ca",
+              "parentUUID": "79106f4d-96e0-45db-88e0-c35aae6e2567",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC26_Sepet içinde ürünü satın alma",
+              "fullTitle": "Kitapsepeti Sepet Sistemi TC26_Sepet içinde ürünü satın alma",
+              "timedOut": null,
+              "duration": 22693,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  _AddToCart.default.blockAds();\n  _ProductDetails.default.SearchBox(expected.Product); /// daha önceden ürünü sildiğimiz için tekrar ürün ekleyelim görsün.\n  _ProductDetails.default.SearchButton();\n  _AddToCart.default.blockAds();\n  cy.wait(3000);\n  cy.get('.product-title').contains(expected.Product).should('be.visible').click();\n  _AddToCart.default.addUrun();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buyProductFromCart();\n});",
+              "err": {},
+              "uuid": "989ae73c-80fa-4102-8736-657707f59d7e",
+              "parentUUID": "79106f4d-96e0-45db-88e0-c35aae6e2567",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC27_Ana menüden satın alma",
+              "fullTitle": "Kitapsepeti Sepet Sistemi TC27_Ana menüden satın alma",
+              "timedOut": null,
+              "duration": 6883,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buyProductFromMain();\n});",
+              "err": {},
+              "uuid": "d233bc39-05c0-4724-9f5d-fa7307f9fa86",
+              "parentUUID": "79106f4d-96e0-45db-88e0-c35aae6e2567",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC28_Sepet içinde ürün silme",
+              "fullTitle": "Kitapsepeti Sepet Sistemi TC28_Sepet içinde ürün silme",
+              "timedOut": null,
+              "duration": 6707,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.deleteProduct();\n});",
+              "err": {},
+              "uuid": "06301501-da39-459b-840d-a5b99de6207c",
+              "parentUUID": "79106f4d-96e0-45db-88e0-c35aae6e2567",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "25c2521c-573e-455a-8fc9-978e7d352924",
+            "c4976a67-817d-4804-9d02-c39815ce1dd9",
+            "9d1be754-b543-4a05-8a2e-501af45f9f67",
+            "0ae8ae54-99ec-4388-800c-855b260bd1ca",
+            "989ae73c-80fa-4102-8736-657707f59d7e",
+            "d233bc39-05c0-4724-9f5d-fa7307f9fa86",
+            "06301501-da39-459b-840d-a5b99de6207c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 85302,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

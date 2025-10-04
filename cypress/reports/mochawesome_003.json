@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-04T18:08:46.754Z",
+    "end": "2025-10-04T18:10:24.491Z",
+    "duration": 97737,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e65c99f5-0461-4f6a-bcb7-cf70b8f95d48",
+      "title": "",
+      "fullFile": "cypress\\e2e\\US03_ProductDetails.cy.js",
+      "file": "cypress\\e2e\\US03_ProductDetails.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8e462b6a-7b61-4646-b6b8-a9bf2b583b8f",
+          "title": "Kitapsepeti Ürün Detayları",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC17_Arama yapılan ürünün içeriğine gidilmesi",
+              "fullTitle": "Kitapsepeti Ürün Detayları TC17_Arama yapılan ürünün içeriğine gidilmesi",
+              "timedOut": null,
+              "duration": 19960,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"ProdDetails\").then(expected => {\n  _ProductDetails.default.visit();\n  _ProductDetails.default.openLoginPopup();\n  _ProductDetails.default.fillEmail(expected.email);\n  _ProductDetails.default.fillPassword(expected.password);\n  _ProductDetails.default.submitLogin();\n  cy.get('.cc-nb-okagree').click(); // çerez kabul etmek için.\n  _ProductDetails.default.SearchBox(expected.Product); // ürünümüzü aratmak\n  _ProductDetails.default.SearchButton();\n  cy.wait(2000);\n  cy.get('.product-title').contains(expected.Product).should('be.visible').click();\n});",
+              "err": {},
+              "uuid": "82da2630-75a3-4516-aee2-7d8c450817e0",
+              "parentUUID": "8e462b6a-7b61-4646-b6b8-a9bf2b583b8f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC18_Ürün içeriğinin kontrolü",
+              "fullTitle": "Kitapsepeti Ürün Detayları TC18_Ürün içeriğinin kontrolü",
+              "timedOut": null,
+              "duration": 17565,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"ProdDetails\").then(expected => {\n  _ProductDetails.default.visit();\n  _ProductDetails.default.openLoginPopup();\n  _ProductDetails.default.fillEmail(expected.email);\n  _ProductDetails.default.fillPassword(expected.password);\n  _ProductDetails.default.submitLogin();\n  cy.get('.cc-nb-okagree').click();\n  _ProductDetails.default.SearchBox(expected.Product);\n  _ProductDetails.default.SearchButton();\n  cy.wait(2000);\n  cy.get('.product-title').contains(expected.Product).should('be.visible').click();\n  cy.get('.product-title.text-center').should(\"be.visible\"); // ürün ismi\n  cy.get('.fw-regular.brand-title').should(\"be.visible\"); // ürün markası\n  cy.get('.fw-regular.current-price').should(\"be.visible\"); // ücreti                        \n});",
+              "err": {},
+              "uuid": "60f155b7-bc67-47dd-9312-0bb12cceddcd",
+              "parentUUID": "8e462b6a-7b61-4646-b6b8-a9bf2b583b8f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC19_Ürün içeriğinin özellikleri",
+              "fullTitle": "Kitapsepeti Ürün Detayları TC19_Ürün içeriğinin özellikleri",
+              "timedOut": null,
+              "duration": 17417,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"ProdDetails\").then(expected => {\n  _ProductDetails.default.visit();\n  _ProductDetails.default.openLoginPopup();\n  _ProductDetails.default.fillEmail(expected.email);\n  _ProductDetails.default.fillPassword(expected.password);\n  _ProductDetails.default.submitLogin();\n  cy.get('.cc-nb-okagree').click();\n  _ProductDetails.default.SearchBox(expected.Product);\n  _ProductDetails.default.SearchButton();\n  cy.wait(2000);\n  cy.get('.product-title').contains(expected.Product).should('be.visible').click();\n  cy.contains('Türü').should('exist');\n  cy.contains('ISBN').should('exist');\n  cy.contains('Sayfa Sayısı').should('exist');\n  cy.contains('Kağıt Tipi').should('exist');\n  cy.contains('Basım Yılı').should('exist');\n});",
+              "err": {},
+              "uuid": "30e37711-f716-44f9-a883-e76db5225931",
+              "parentUUID": "8e462b6a-7b61-4646-b6b8-a9bf2b583b8f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC20_Ürün içeriğine girerek sepete ekleme",
+              "fullTitle": "Kitapsepeti Ürün Detayları TC20_Ürün içeriğine girerek sepete ekleme",
+              "timedOut": null,
+              "duration": 23443,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"ProdDetails\").then(expected => {\n  _ProductDetails.default.visit();\n  _ProductDetails.default.openLoginPopup();\n  _ProductDetails.default.fillEmail(expected.email);\n  _ProductDetails.default.fillPassword(expected.password);\n  _ProductDetails.default.submitLogin();\n  cy.get('.cc-nb-okagree').click();\n  _ProductDetails.default.SearchBox(expected.Product);\n  _ProductDetails.default.SearchButton();\n  cy.wait(2000);\n  cy.get('.product-title').contains(expected.Product).should('be.visible').click();\n  cy.get('#addToCartBtn').should('be.visible').click(); // sepete ekleme \n  cy.wait(2000);\n  cy.contains('Ürün Başarıyla Sepete Eklendi').should('be.visible');\n  cy.get('#cart-popup-go-cart').should('be.visible').and('contain.text', 'Sepete Git');\n  cy.wait(2000);\n  cy.get('#cart-popup-continue-shopping').should('be.visible').and('contain.text', 'Satın Al');\n});",
+              "err": {},
+              "uuid": "212032c0-e5da-42ef-bb7d-05cdeae28d80",
+              "parentUUID": "8e462b6a-7b61-4646-b6b8-a9bf2b583b8f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC21_Ürün içeriğine girerek sepete ekleme ve kontrol",
+              "fullTitle": "Kitapsepeti Ürün Detayları TC21_Ürün içeriğine girerek sepete ekleme ve kontrol",
+              "timedOut": null,
+              "duration": 16856,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"ProdDetails\").then(expected => {\n  _ProductDetails.default.visit();\n  _ProductDetails.default.openLoginPopup();\n  _ProductDetails.default.fillEmail(expected.email);\n  _ProductDetails.default.fillPassword(expected.password);\n  _ProductDetails.default.submitLogin();\n  cy.get('.cc-nb-okagree').click();\n  _ProductDetails.default.SearchBox(expected.Product);\n  _ProductDetails.default.SearchButton();\n  cy.wait(2000);\n  cy.get('.product-title').contains(expected.Product).click({\n    force: true\n  }); //ürünü sepete ekleme\n  // artık ProductDetails üzerinden çağırıyoruz\n  _ProductDetails.default.verifyCartIncreasedByOne(() => {\n    cy.get('#addToCartBtn').should('be.visible').click();\n    cy.contains('Ürün Başarıyla Sepete Eklendi').should('be.visible');\n    cy.get('i.ti-close').first().click({\n      force: true\n    });\n  });\n});",
+              "err": {},
+              "uuid": "6a0d53e7-358a-49ee-acf0-8e485ba1faf3",
+              "parentUUID": "8e462b6a-7b61-4646-b6b8-a9bf2b583b8f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "82da2630-75a3-4516-aee2-7d8c450817e0",
+            "60f155b7-bc67-47dd-9312-0bb12cceddcd",
+            "30e37711-f716-44f9-a883-e76db5225931",
+            "212032c0-e5da-42ef-bb7d-05cdeae28d80",
+            "6a0d53e7-358a-49ee-acf0-8e485ba1faf3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 95241,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

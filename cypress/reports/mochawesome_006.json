@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-04T18:16:57.805Z",
+    "end": "2025-10-04T18:17:34.747Z",
+    "duration": 36942,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9a0c115a-d146-48e4-a0f4-c6e2b385d90f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\US06_GuestAcc.cy.js",
+      "file": "cypress\\e2e\\US06_GuestAcc.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c19ecf80-b10d-4ae9-9006-3cf7b5db1e8c",
+          "title": "Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC34_Satın Alma Ekranı",
+              "fullTitle": "Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme TC34_Satın Alma Ekranı",
+              "timedOut": null,
+              "duration": 4898,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.guessAddProduct();\n  _AddToCart.default.continueShopping(); // satın al butonuna tıklar ve üye girişi sekmesinin kontrolünü sağlar.\n  _AddToCart.default.blockAds();\n});",
+              "err": {},
+              "uuid": "1b1d81cd-43a2-4b71-a3be-1e1528f190c6",
+              "parentUUID": "c19ecf80-b10d-4ae9-9006-3cf7b5db1e8c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC35_Üye olmadan devam etme",
+              "fullTitle": "Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme TC35_Üye olmadan devam etme",
+              "timedOut": null,
+              "duration": 2824,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.guessAddProduct();\n  _AddToCart.default.continueShopping(); // satın al butonuna tıklar ve üye girişi sekmesinin kontrolünü sağlar.\n  _AddToCart.default.blockAds();\n  cy.contains('button', 'Üye Olmadan Devam Et').click();\n});",
+              "err": {},
+              "uuid": "e6e9d9d6-869d-4a8f-ad52-927a15a44a17",
+              "parentUUID": "c19ecf80-b10d-4ae9-9006-3cf7b5db1e8c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC36_Üye olmadan devam etme adres bilgilerin sayfasına yönlendirme ve kontrol",
+              "fullTitle": "Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme TC36_Üye olmadan devam etme adres bilgilerin sayfasına yönlendirme ve kontrol",
+              "timedOut": null,
+              "duration": 5256,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.guessAddProduct();\n  _AddToCart.default.continueShopping(); // satın al butonuna tıklar ve üye girişi sekmesinin kontrolünü sağlar.\n  _AddToCart.default.blockAds();\n  cy.contains('button', 'Üye Olmadan Devam Et').click();\n  _AddToCart.default.adressPageCheck();\n});",
+              "err": {},
+              "uuid": "4f1152fc-78db-4bdc-a123-fca9e3623f8b",
+              "parentUUID": "c19ecf80-b10d-4ae9-9006-3cf7b5db1e8c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC37_Adres bilgileri formunu doldurma negatif",
+              "fullTitle": "Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme TC37_Adres bilgileri formunu doldurma negatif",
+              "timedOut": null,
+              "duration": 13853,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.guessAddProduct();\n  cy.wait(2000);\n  _AddToCart.default.continueShopping(); // satın al butonuna tıklar ve üye girişi sekmesinin kontrolünü sağlar.\n  _AddToCart.default.blockAds();\n  cy.contains('button', 'Üye Olmadan Devam Et').click();\n  _AddToCart.default.adressPageCheck(); // adres bilgilerinine yönlendirildiğini ve mahalle-cep telefonu-adres bilgisi gibi bilgilerin içerildiğini kontrol eder.\n  _AddToCart.default.adressPageFillNegative();\n  cy.contains('button', 'Adresi Kaydet').click();\n});",
+              "err": {},
+              "uuid": "cb45ee72-7569-4e78-aacb-d12f84d79bf4",
+              "parentUUID": "c19ecf80-b10d-4ae9-9006-3cf7b5db1e8c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC38_Adres bilgileri formunu doldurma pozitif",
+              "fullTitle": "Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme TC38_Adres bilgileri formunu doldurma pozitif",
+              "timedOut": null,
+              "duration": 7705,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.guessAddProduct();\n  _AddToCart.default.continueShopping(); // satın al butonuna tıklar ve üye girişi sekmesinin kontrolünü sağlar.\n  _AddToCart.default.blockAds();\n  cy.contains('button', 'Üye Olmadan Devam Et').click();\n  _AddToCart.default.adressPageCheck(); // adres bilgilerinine yönlendirildiğini ve mahalle-cep telefonu-adres bilgisi gibi bilgilerin içerildiğini kontrol eder.\n  _AddToCart.default.adressPageFillPos();\n  cy.contains('button', 'Adresi Kaydet').click();\n});",
+              "err": {},
+              "uuid": "3b1d41cf-4824-4f81-9e6d-85a590b7cfe5",
+              "parentUUID": "c19ecf80-b10d-4ae9-9006-3cf7b5db1e8c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1b1d81cd-43a2-4b71-a3be-1e1528f190c6",
+            "e6e9d9d6-869d-4a8f-ad52-927a15a44a17",
+            "4f1152fc-78db-4bdc-a123-fca9e3623f8b",
+            "cb45ee72-7569-4e78-aacb-d12f84d79bf4",
+            "3b1d41cf-4824-4f81-9e6d-85a590b7cfe5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34536,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

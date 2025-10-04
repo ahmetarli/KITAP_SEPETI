@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-04T18:14:39.025Z",
+    "end": "2025-10-04T18:16:16.794Z",
+    "duration": 97769,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "094c5d88-4891-4a4c-8652-bea3622ece47",
+      "title": "",
+      "fullFile": "cypress\\e2e\\US05_Payment.cy.js",
+      "file": "cypress\\e2e\\US05_Payment.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1d03655e-ebf2-446b-84d8-beef1967b928",
+          "title": "Kitapsepeti Ödeme İşlemleri",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC29_Satın Alma Ekranı",
+              "fullTitle": "Kitapsepeti Ödeme İşlemleri TC29_Satın Alma Ekranı",
+              "timedOut": null,
+              "duration": 27905,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  cy.wait(3000);\n  _AddToCart.default.blockAds();\n  // Bu kısım öncesinden ürün eklememiz ve sonrasında kontrol etmemiz için \n  _ProductDetails.default.SearchBox(expected.Product);\n  _ProductDetails.default.SearchButton();\n  cy.wait(3000);\n  cy.get('.product-title').contains(expected.Product).should('be.visible').click();\n  _AddToCart.default.addUrun();\n  _AddToCart.default.visit(); // tekrar anasayfaya dönüş\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buyProductFromCart(); // Sepet içindeyken satın alma işlemi için\n  _AddToCart.default.pageConfirm(); // adres bilgilerinin görüntülenmesi\n});",
+              "err": {},
+              "uuid": "fdd76dfd-bf37-4faa-92bd-b2b7d85bb16d",
+              "parentUUID": "1d03655e-ebf2-446b-84d8-beef1967b928",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC30_Ödeme Adımına Geçiş",
+              "fullTitle": "Kitapsepeti Ödeme İşlemleri TC30_Ödeme Adımına Geçiş",
+              "timedOut": null,
+              "duration": 15127,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  cy.wait(3000);\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buyProductFromCart();\n  _AddToCart.default.paymentPage();\n  _AddToCart.default.pageConfirmKargo(); //sayfadaki kargo seçeneklerini kontrol eder.\n  _AddToCart.default.paymentChoose(); //sayfadaki ödeme seçeneklerini kontrol eder.\n});",
+              "err": {},
+              "uuid": "ec4de5e0-908a-4b62-b59b-4a3cc0d7d61c",
+              "parentUUID": "1d03655e-ebf2-446b-84d8-beef1967b928",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC31_Kartla Ödeme Positive",
+              "fullTitle": "Kitapsepeti Ödeme İşlemleri TC31_Kartla Ödeme Positive",
+              "timedOut": null,
+              "duration": 17710,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  cy.wait(3000);\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buyProductFromCart();\n  _AddToCart.default.paymentPage();\n  _AddToCart.default.pageConfirmKargo();\n  _AddToCart.default.paymentWithCard();\n  _AddToCart.default.cardPageConfirm();\n  _AddToCart.default.cardInfos(); // card bilgilerini girmek için\n  _AddToCart.default.buttonControl(); // butonun aktif mi değil mi ?\n});",
+              "err": {},
+              "uuid": "522a49da-c409-4918-855a-f4d30791d195",
+              "parentUUID": "1d03655e-ebf2-446b-84d8-beef1967b928",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC32_Kartla Ödeme Negative",
+              "fullTitle": "Kitapsepeti Ödeme İşlemleri TC32_Kartla Ödeme Negative",
+              "timedOut": null,
+              "duration": 18190,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  cy.wait(3000);\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buyProductFromCart();\n  _AddToCart.default.paymentPage();\n  _AddToCart.default.pageConfirmKargo();\n  _AddToCart.default.paymentWithCard();\n  _AddToCart.default.cardPageConfirm();\n  _AddToCart.default.cardInfosFalse();\n  cy.get('#iyz-payment-button').click();\n  cy.contains('Güvenlik kodu (CVC) giriniz').should('be.visible'); //cvv boş bırakılır.\n});",
+              "err": {},
+              "uuid": "935eb4bc-c3f5-4c6c-8c6e-6c3528bd5dcc",
+              "parentUUID": "1d03655e-ebf2-446b-84d8-beef1967b928",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC33_Kartla Ödeme Sipariş Özeti Kontrolü",
+              "fullTitle": "Kitapsepeti Ödeme İşlemleri TC33_Kartla Ödeme Sipariş Özeti Kontrolü",
+              "timedOut": null,
+              "duration": 15995,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"CartDetails\").then(expected => {\n  _AddToCart.default.visit();\n  _AddToCart.default.openLoginPopup();\n  _AddToCart.default.fillEmail(expected.email);\n  _AddToCart.default.fillPassword(expected.password);\n  _AddToCart.default.submitLogin();\n  cy.wait(3000);\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buttonForCart();\n  _AddToCart.default.buttonForCart2(); //Sepete tıklatıldıktan sonra yeni bir sepete git seçeneğini tetiklemek için..\n  _AddToCart.default.blockAds();\n  _AddToCart.default.buyProductFromCart();\n  _AddToCart.default.paymentPage();\n  _AddToCart.default.pageConfirmKargo();\n  _AddToCart.default.paymentWithCard();\n  _AddToCart.default.cardPageConfirm();\n  _AddToCart.default.siparisOzeti(); // toplam tutar -sepet özeti görmek için.\n});",
+              "err": {},
+              "uuid": "674be33b-a29e-483e-a106-5c5ab0485bd0",
+              "parentUUID": "1d03655e-ebf2-446b-84d8-beef1967b928",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fdd76dfd-bf37-4faa-92bd-b2b7d85bb16d",
+            "ec4de5e0-908a-4b62-b59b-4a3cc0d7d61c",
+            "522a49da-c409-4918-855a-f4d30791d195",
+            "935eb4bc-c3f5-4c6c-8c6e-6c3528bd5dcc",
+            "674be33b-a29e-483e-a106-5c5ab0485bd0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 94927,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
