@@ -38,6 +38,33 @@ class Search {
         cy.get('.container secure-block py-3').should('have.length', 0);
 
     }
+    selectAccordion() {
+        cy.get('#accordion-categories-361').click();
+            cy.get('#accordion-model-361').click();
+            cy.get('#accordion-brand-361')
+            .should('have.class', 'active')
+            .next('div')
+            .find('label.filter-item')
+            .first()
+            .scrollIntoView()
+            .click({ force: true });
+            cy.get('button.btn.btn-secondary').contains('Seçimi Filtrele').scrollIntoView().click({ force: true });
+    }
+
+    filterVisib(){            cy.get('select#sort').should('be.visible')
+            cy.get('select#sort > option').contains('Varsayılan Sıralama').should('exist');
+            cy.get('select#sort > option').contains('Yeniden Eskiye').should('exist');
+            cy.get('select#sort > option').contains('Eskiden Yeniye').should('exist');
+            cy.get('select#sort > option').contains('Fiyat Artan').should('exist');
+            cy.get('select#sort > option').contains('Fiyat Azalan').should('exist');
+        }
+    
+    brandVisib(){
+        cy.get('img').should("be.visible");
+        cy.get('.product-title.text-center').should("be.visible");  // ürün ismi
+        cy.get('.fw-regular.brand-title').should("be.visible");   // ürün markası
+        cy.get('.fw-regular.current-price').should("be.visible"); // ücreti
+    }
 
 
 }

@@ -61,10 +61,7 @@ describe("Kitapsepeti Search Testleri", () => {
             SearchProduct.SearchBox(expected.Product);     
             SearchProduct.SearchButton();
             SearchProduct.cleanSearchButton();
-            cy.get('img').should("be.visible");
-            cy.get('.product-title.text-center').should("be.visible");  // ürün ismi
-            cy.get('.fw-regular.brand-title').should("be.visible");   // ürün markası
-            cy.get('.fw-regular.current-price').should("be.visible"); // ücreti
+            SearchProduct.brandVisib(); // ücret-marka-ürün ismi görüntüler
             
             
         });
@@ -98,15 +95,8 @@ describe("Kitapsepeti Search Testleri", () => {
             SearchProduct.cleanSearchButton();
             cy.get('.cc-nb-okagree', { timeout: 10000 }).should('be.visible').click();
             SearchProduct.productVisible();
-            cy.get('select#sort').should('be.visible')
-            cy.get('select#sort > option').contains('Varsayılan Sıralama').should('exist');
-            cy.get('select#sort > option').contains('Yeniden Eskiye').should('exist');
-            cy.get('select#sort > option').contains('Eskiden Yeniye').should('exist');
-            cy.get('select#sort > option').contains('Fiyat Artan').should('exist');
-            cy.get('select#sort > option').contains('Fiyat Azalan').should('exist');
+            SearchProduct.filterVisib();
 
-            
-     
         });
     });  
     
@@ -124,19 +114,8 @@ describe("Kitapsepeti Search Testleri", () => {
             SearchProduct.productVisible();
             cy.get('.cc-nb-okagree', { timeout: 10000 }).should('be.visible').click();
             cy.wait(3000);
-
-
             // Marka accordion aç, ilk seçeneğe tıkla ve kontrol et.  Kategori ve model için de accordion yanına isimlerini yazmak yeterli.
-            cy.get('#accordion-categories-361').click();
-            cy.get('#accordion-model-361').click();
-            cy.get('#accordion-brand-361')
-            .should('have.class', 'active')
-            .next('div')
-            .find('label.filter-item')
-            .first()
-            .scrollIntoView()
-            .click({ force: true });
-            cy.get('button.btn.btn-secondary').contains('Seçimi Filtrele').scrollIntoView().click({ force: true });
+            SearchProduct.selectAccordion();
      
         });
     }); 

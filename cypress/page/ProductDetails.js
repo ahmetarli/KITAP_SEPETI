@@ -48,6 +48,13 @@ class Details {
       });
     });
   }
+  controlProduct(){
+            cy.get('.product-title').contains(expected.Product).should('be.visible').click();
+            cy.get('.product-title.text-center').should("be.visible");  // ürün ismi
+            cy.get('.fw-regular.brand-title').should("be.visible");   // ürün markası
+            cy.get('.fw-regular.current-price').should("be.visible"); // ücreti  
+  }
+
 
 
 }
