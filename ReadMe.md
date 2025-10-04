@@ -73,7 +73,8 @@ xdg-open cypress/reports/html/report.html
 
 ---
 
-**## 📂 Config ayarları ve Mocha kurulumu için gerekli şartlar**
+## 🔵 Config ayarları ve Mocha kurulumu için gerekli şartlar
+
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
