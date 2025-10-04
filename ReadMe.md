@@ -97,4 +97,5 @@ module.exports = defineConfig({
   },
 });
 
-![CypressRunReport](cypress/screenshots/cypressReport.png)
+![Cypress Run Report](cypress/screenshots/cypressReport.png)
+
