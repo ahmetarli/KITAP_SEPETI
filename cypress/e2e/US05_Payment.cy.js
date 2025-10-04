@@ -6,7 +6,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 describe("Kitapsepeti Ödeme İşlemleri", () => {
-    it("TC01_Satın Alma Ekranı", () => {
+    it("TC29_Satın Alma Ekranı", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -32,7 +32,7 @@ describe("Kitapsepeti Ödeme İşlemleri", () => {
         });
     });
 
-    it("TC02_Ödeme Adımına Geçiş", () => {
+    it("TC30_Ödeme Adımına Geçiş", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -51,7 +51,7 @@ describe("Kitapsepeti Ödeme İşlemleri", () => {
         });
     });
 
-    it("TC03_Kartla Ödeme Positive", () => {
+    it("TC31_Kartla Ödeme Positive", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -73,7 +73,7 @@ describe("Kitapsepeti Ödeme İşlemleri", () => {
         });
     });
 
-    it("TC04_Kartla Ödeme Negative", () => {
+    it("TC32_Kartla Ödeme Negative", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -96,7 +96,7 @@ describe("Kitapsepeti Ödeme İşlemleri", () => {
         });
     });
 
-    it("TC05_Kartla Ödeme Sipariş Özeti Kontrolü", () => {
+    it("TC33_Kartla Ödeme Sipariş Özeti Kontrolü", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();

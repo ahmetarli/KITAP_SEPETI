@@ -8,7 +8,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 
 describe("Kitapsepeti Search Testleri", () => {
-    it("TC01_Arama Çubuğuna en az 1 karakter yazılarak arama yapılması", () => {
+    it("TC09_Arama Çubuğuna en az 1 karakter yazılarak arama yapılması", () => {
         cy.fixture("Search").then((expected) => {
             SearchProduct.visit();
            // SearchProduct.openLoginPopup();
@@ -21,7 +21,7 @@ describe("Kitapsepeti Search Testleri", () => {
         });
     });
 
-    it("TC02_Arama yapılan ürünün yüklenmesi", () => {
+    it("TC10_Arama yapılan ürünün yüklenmesi", () => {
         cy.fixture("Search").then((expected) => {
             SearchProduct.visit();
            // SearchProduct.openLoginPopup();
@@ -36,7 +36,7 @@ describe("Kitapsepeti Search Testleri", () => {
     });  
 
 
-    it("TC03_Sistemde olmayan bir ürünü aratma", () => {
+    it("TC11_Sistemde olmayan bir ürünü aratma", () => {
         cy.fixture("Search").then((expected) => {
             SearchProduct.visit();
            // SearchProduct.openLoginPopup();
@@ -51,7 +51,7 @@ describe("Kitapsepeti Search Testleri", () => {
     });  
 
 
-    it("TC04_Arama yapılan ürün bilgilerinin yüklenmesi", () => {
+    it("TC12_Arama yapılan ürün bilgilerinin yüklenmesi", () => {
         cy.fixture("Search").then((expected) => {
             SearchProduct.visit();
             // SearchProduct.openLoginPopup();
@@ -70,7 +70,7 @@ describe("Kitapsepeti Search Testleri", () => {
         });
     });  
 
-    it("TC05_Arama yapılan ürünün sepete ekle butonu kontrolü", () => {
+    it("TC13_Arama yapılan ürünün sepete ekle butonu kontrolü", () => {
         cy.fixture("Search").then((expected) => {
             SearchProduct.visit();
             // SearchProduct.openLoginPopup();
@@ -86,7 +86,7 @@ describe("Kitapsepeti Search Testleri", () => {
         });
     });  
     
-    it("TC06_Sıralama Seçenekleri", () => {
+    it("TC14_Sıralama Seçenekleri", () => {
         cy.fixture("Search").then((expected) => {
             SearchProduct.visit();
             // SearchProduct.openLoginPopup();
@@ -111,7 +111,7 @@ describe("Kitapsepeti Search Testleri", () => {
     });  
     
     
-    it("TC07_TC08_Kategorilerden ürün seçmek", () => {
+    it("TC15_Kategorilerden ürün seçmek", () => {
         cy.fixture("Search").then((expected) => {
             SearchProduct.visit();
             // SearchProduct.openLoginPopup();
@@ -142,7 +142,7 @@ describe("Kitapsepeti Search Testleri", () => {
     }); 
 
 
-    it("TC09_Arama yapılan ürünün yüklenmesi SCROLL YAPMA", () => {
+    it("TC16_Arama yapılan ürünün yüklenmesi SCROLL YAPMA", () => {
         cy.fixture("Search").then((expected) => {
             SearchProduct.visit();
             // SearchProduct.openLoginPopup();

@@ -7,7 +7,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 
 describe("Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme", () => {
-    it("TC01_Satın Alma Ekranı", () => {
+    it("TC34_Satın Alma Ekranı", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.guessAddProduct();
@@ -17,7 +17,7 @@ describe("Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme", () => {
         });
     });
 
-     it("TC02_Üye olmadan devam etme", () => {
+     it("TC35_Üye olmadan devam etme", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.guessAddProduct();
@@ -28,7 +28,7 @@ describe("Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme", () => {
         });
     });
     
-    it("TC03_TC04_Üye olmadan devam etme adres bilgilerin sayfasına yönlendirme ve kontrol", () => {
+    it("TC36_Üye olmadan devam etme adres bilgilerin sayfasına yönlendirme ve kontrol", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.guessAddProduct();
@@ -40,7 +40,7 @@ describe("Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme", () => {
         });
     });
     
-    it("TC05_Adres bilgileri formunu doldurma negatif", () => {
+    it("TC37_Adres bilgileri formunu doldurma negatif", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.guessAddProduct();
@@ -56,7 +56,7 @@ describe("Kitapsepeti MisafirAcc Anasayfadan Ürün Sepete Ekleme", () => {
         });
     });
 
-    it("TC06_Adres bilgileri formunu doldurma pozitif", () => {
+    it("TC38_Adres bilgileri formunu doldurma pozitif", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.guessAddProduct();

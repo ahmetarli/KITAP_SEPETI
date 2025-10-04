@@ -9,7 +9,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 
 describe("Kitapsepeti Sepet Sistemi", () => {
-    it("TC01_Sepete Erişim", () => {
+    it("TC22_Sepete Erişim", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -33,7 +33,7 @@ describe("Kitapsepeti Sepet Sistemi", () => {
     });
 
 
-    it("TC02_TC03_Sepet değer kontrolleri", () => {
+    it("TC23_Sepet değer kontrolleri", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -51,7 +51,7 @@ describe("Kitapsepeti Sepet Sistemi", () => {
         });
     });
 
-    it("TC04_Sepet içinde ürün adeti arttırma", () => {
+    it("TC24_Sepet içinde ürün adeti arttırma", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -69,7 +69,7 @@ describe("Kitapsepeti Sepet Sistemi", () => {
 
 
     
-    it("TC06-7_Sepet paneli içinde tüm sepeti temizleme ve kontrol ", () => {
+    it("TC25_Sepet paneli içinde tüm sepeti temizleme ve kontrol ", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -88,7 +88,7 @@ describe("Kitapsepeti Sepet Sistemi", () => {
         });
     });
 
-    it("TC08_Sepet içinde ürünü satın alma", () => {
+    it("TC26_Sepet içinde ürünü satın alma", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -111,7 +111,7 @@ describe("Kitapsepeti Sepet Sistemi", () => {
     });
 
 
-    it("TC09_Ana menüden satın alma", () => {
+    it("TC27_Ana menüden satın alma", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();
@@ -125,7 +125,7 @@ describe("Kitapsepeti Sepet Sistemi", () => {
         });
     });
 
-    it("TC05_Sepet içinde ürün silme", () => {
+    it("TC28_Sepet içinde ürün silme", () => {
         cy.fixture("CartDetails").then((expected) => {
             AddToCart.visit();
             AddToCart.openLoginPopup();

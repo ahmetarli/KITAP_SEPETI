@@ -6,7 +6,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 
 describe("Kitapsepeti Ürün Detayları", () => {
-    it("TC01_Arama yapılan ürünün içeriğine gidilmesi", () => {
+    it("TC17_Arama yapılan ürünün içeriğine gidilmesi", () => {
         cy.fixture("ProdDetails").then((expected) => {
             ProductDetails.visit();
             ProductDetails.openLoginPopup();
@@ -23,7 +23,7 @@ describe("Kitapsepeti Ürün Detayları", () => {
         });
     }); 
 
-     it("TC02_Ürün içeriğinin kontrolü", () => {
+     it("TC18_Ürün içeriğinin kontrolü", () => {
         cy.fixture("ProdDetails").then((expected) => {
             ProductDetails.visit();
             ProductDetails.openLoginPopup();
@@ -43,7 +43,7 @@ describe("Kitapsepeti Ürün Detayları", () => {
         });
     });
 
-    it("TC03_Ürün içeriğinin özellikleri", () => {
+    it("TC19_Ürün içeriğinin özellikleri", () => {
         cy.fixture("ProdDetails").then((expected) => {
             ProductDetails.visit();
             ProductDetails.openLoginPopup();
@@ -65,7 +65,7 @@ describe("Kitapsepeti Ürün Detayları", () => {
         });
     });
 
-    it("TC05_Ürün içeriğine girerek sepete ekleme", () => {
+    it("TC20_Ürün içeriğine girerek sepete ekleme", () => {
         cy.fixture("ProdDetails").then((expected) => {
             ProductDetails.visit();
             ProductDetails.openLoginPopup();
@@ -87,7 +87,7 @@ describe("Kitapsepeti Ürün Detayları", () => {
         });
     });
 
-    it("TC06_Ürün içeriğine girerek sepete ekleme ve kontrol", () => {
+    it("TC21_Ürün içeriğine girerek sepete ekleme ve kontrol", () => {
         cy.fixture("ProdDetails").then((expected) => {
             ProductDetails.visit();
             ProductDetails.openLoginPopup();
