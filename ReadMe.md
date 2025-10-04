@@ -13,7 +13,13 @@ Login, ürün arama, ürün detayına giriş, sepete ekleme ve ödeme işlemleri
 - Sepete yönetimi ve kontrolü  
 - Ödeme ve Sipariş Onayı  
 - Misafir olarak satın alma işlemleri  
-- Testler POM (Page Object Model) yapısına uygun olarak yazılmıştır  
+- Testler POM (Page Object Model) yapısına uygun olarak yazılmıştır
+- Kullanılan araçlar ve Teknolojiler ;
+- **VS Code** — Kod editörü  
+- **Cypress** — E2E Test Framework  
+- **Mocha/Mochawesome** — Test raporlama  
+- **Node.js / npm** — Paket ve script yönetimi
+
 
 ---
 
@@ -56,10 +62,10 @@ npx cypress open
 npx cypress run
 
 # JSON dosyalarını birleştir
-npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+npx mochawesome-merge cypress/reports/mochawesome_*.json > cypress/reports/merged.json
 
 # HTML raporunu oluştur
-npx marge cypress/reports/report.json -f report -o cypress/reports/html
+npx marge cypress/reports/merged.json --reportDir cypress/reports --inline
 
 # HTML raporu aç (Windows)
 start cypress/reports/html/report.html
@@ -104,6 +110,13 @@ module.exports = defineConfig({
 
 **📸Cypress Run Report Screenshot**
 ![Cypress Run Report](cypress/screenshots/cypressReport.png) 
+
+
+![Mocha Report 1](cypress/screenshots/MochaReports1.png)
+
+![Mocha Report 2](cypress/screenshots/MochaReports2.png)
+
+![Mocha Report 3](cypress/screenshots/MochaReports3.png)
 
 
 ---
